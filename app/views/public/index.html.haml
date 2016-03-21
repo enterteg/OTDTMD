@@ -6,12 +6,17 @@
 					#logo_image
 				%ul
 					%li= 'my life'
+					|
 					%li= 'travels'
+					|
 					%li= 'food'
+					|
 					%li= 'about me'
 				.social
-					.fb
-					.gmail
+					=link_to 'fb-profile' do
+						=image_tag 'fb-icon.png'	
+					=link_to 'gmail' do
+						=image_tag 'gmail-icon.png'	
 	#logo_banner
 		.banner_text
 			.smaller
