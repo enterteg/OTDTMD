@@ -1,0 +1,48 @@
+%html
+	%head
+		%title Blog
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+		%link{:href => "https://fonts.googleapis.com/css?family=Raleway:200|Roboto:100", :rel => "stylesheet", :type => "text/css"}/
+		= csrf_meta_tags
+	%body
+		%header
+		.container
+			#top_menu
+				%nav
+					=link_to :root do
+						#logo_image
+					%ul
+						%li= 'my life'
+						|
+						%li= 'travels'
+						|
+						%li= 'food'
+						|
+						%li= 'about me'
+					.right
+						-if current_user
+							.admin
+								=link_to '+ Add post', new_post_path, class: 'button add_post'
+								=link_to 'Statistics', stats_path, class: 'button stats'
+								=link_to 'Logout', logout_path, class: 'button logout'
+						- else
+							.social
+								=link_to 'fb-profile' do
+									=image_tag 'fb-icon.png'	
+								=link_to 'gmail' do
+									=image_tag 'gmail-icon.png'	
+		#logo_banner
+			.banner_text
+				.smaller
+					= 'OPEN THE DOOR'
+					%br/
+				.smaller_more
+					= 'TO MY'
+					%br/
+				.bigger
+					= 'DREAMS'
+	- if flash[:notice]
+		= flash[:notice]
+	.container	
+		= yield

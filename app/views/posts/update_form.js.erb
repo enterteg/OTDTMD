@@ -1,0 +1,14 @@
+<% if @category_id.to_i == 1 %>
+	$('#new_post').append('<%= j render 'partials/map' %>')
+<% else %>
+	$('#map_form').remove()
+<% end %>
+
+
+
+
+
+
+
+
+
