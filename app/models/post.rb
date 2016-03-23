@@ -3,6 +3,6 @@ class Post < ActiveRecord::Base
 	has_many :photos
 
 	validates_presence_of :title, :desc, :category_id
-	validates :desc, length: { minimum: 100}
+	validates :desc, length: { minimum: 10}
 	validates :title, length: { minimum: 3}
 end

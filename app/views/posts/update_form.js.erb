@@ -1,12 +1,45 @@
+refresh_pin = function() {
+  $('#location_pin').remove();
+  $('#map_photo').off('click');
+  set_pin();
+};
+
+set_pin = function() {
+  map = $('#map_photo');
+  map.css('cursor', 'url(<%= asset_path "flag.png" %>), auto');
+  map.on('click', function(e) {
+
+    offset = $(this).offset();
+    left_offset = ((e.pageX - offset.left) / $(this).width()) * 100;
+    top_offset = ((e.pageY - offset.top) / $(this).height()) * 100;
+    add_pin(left_offset, top_offset);
+    map.off('click');
+    map.css('cursor', 'auto');
+
+  });
+};
+
+add_pin = function(x, y) {
+  map = $('#map_photo');
+	$('<div>').addClass('map_pin').attr('id', 'location_pin').css({
+	  'left': x + '%',
+	  'top': y + '%'
+	}).appendTo('#map_photo');
+  $('#post_locX').val(x);
+  $('#post_locY').val(y);
+};
+
+
+
 <% if @category_id.to_i == 1 %>
-	$('#new_post').append('<%= j render 'partials/map' %>')
+	$('#map_form').slideDown();
+	set_pin();
+	$('#refresh_pin_button').click(function(e) {
+   	refresh_pin();
+  });
 <% else %>
-	$('#map_form').remove()
+	$('#map_form').slideUp();
 <% end %>
-
-
-
-
 
 
 

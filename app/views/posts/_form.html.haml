@@ -1,7 +1,25 @@
+-if @post.errors.any?
+	%ul
+	- @post.errors.full_messages.each do |msg|
+		%li= msg	
+
 =form_for @post do |f|
-	= f.label :title
-	= f.text_field :title
-	= f.label :category_id
-	= f.select :category_id, [['travels', 1], ['food', 2], ['my life', 3]], prompt: '- select category -'
-	= f.label :desc, 'Content'
-	= f.text_area :desc
+	.input
+		= f.label :category_id
+		= f.select :category_id, [['travels', 1], ['food', 2], ['my life', 3]], prompt: '- select category -'
+	.input
+		= f.label :title
+		= f.text_field :title
+	.input
+		= f.label :desc, 'Content'
+		= f.text_area :desc
+	.input
+		= label_tag :photos, 'Photos'
+		.upload
+			+ Add
+			= file_field_tag "photos[]", type: :file, multiple: true
+	.submit
+		= f.submit
+	= f.number_field :locX, type: 'hidden'
+	= f.number_field :locY, type: 'hidden'
+	

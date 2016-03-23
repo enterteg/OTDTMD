@@ -28,6 +28,7 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,0 +1,117 @@
+@import 'mixins'
+
+
+//--------- form styles
+#new_post
+	max-width: 600px
+	margin: 50px auto
+	.submit
+		text-align: center
+		input
+			&[type="submit"]
+				margin: 0 auto
+				padding: 10px 20px
+				background: rgba(200,50,200,0.35)
+				outline: none
+				font-size: 1.3rem
+				font-family: 'Roboto'
+				border: none
+				color: white
+				cursor: pointer
+				font-weight: bold
+				+transition(0.2s ease all)
+				&:hover
+					background: rgba(200,50,200,0.5)
+	.input 
+		margin: 20px 0px
+		display: flex
+		flex-direction: column
+		.upload
+			text-align: center
+			width: 90px
+			line-height: 35px
+			border-radius: 8px
+			box-shadow: 0px 0px 0px 1px rgba(100,0,150,0.5)
+			color: black
+			font-size: 1.2rem
+			position: relative
+			+transition(0.2s ease all)
+
+			&:hover
+				font-weight: bold
+				background: rgba(200,50,200,0.4)
+				box-shadow: none
+				color: white
+				cursor: pointer
+		select
+			padding: 10px
+			background: transparent
+			&:hover
+				cursor: pointer
+	
+		input
+			flex-grow: 1
+			padding: 10px
+			&[type="submit"]
+				padding: 20px
+				color: red
+			&[type="file"]
+				display: block
+				width: 90px
+				height: 35px
+				opacity: 0
+				top: 0px
+				left: 0px
+				position: absolute
+				background-color: red
+				cursor: pointer
+
+		label
+			margin: 10px 0px
+		textarea
+			height: 400px
+			resize: vertical
+			padding: 20px
+		input, textarea, select
+			font-family: 'Roboto'
+			font-size: 1rem
+			&:focus
+				outline: 2px solid rgba(250,0,250,0.1)
+		
+
+
+
+
+//--------- map styles
+#map_form
+	margin: 50px auto
+	max-width: 1100px
+#refresh_pin_button
+	border-radius: 8px
+	box-shadow: 0px 0px 0px 1px rgba(100,0,150,0.5)
+	color: black
+	padding: 10px
+	margin: 0 auto
+	width: 90px
+	margin-bottom: 3px
+	+transition(0.2s ease all)
+	&:hover
+		background: rgba(200,50,200,0.5)
+		box-shadow: none
+		color: white
+		cursor: pointer
+#map_photo
+	position: relative
+	z-index: 1
+	img
+		width: 100%
+.map_pin 
+	position: absolute
+	width: 20px
+	height: 20px
+	background-image: url(image_path('flag.png'))
+	z-index: 10
+	transition: 0.3s ease all
+	&:hover
+		cursor: pointer
+		+transform(translateY(-2px))

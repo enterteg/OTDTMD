@@ -1,0 +1,59 @@
+$(document).on 'change', '#post_category_id', ->
+	$.ajax '/update_form',
+			type: 'POST',
+			data: {
+				category_id: $('#post_category_id option:selected').val()
+			}
+
+
+
+	
+refresh_pin = ->
+  $('#location_pin').remove()
+  $('#map_photo').off 'click'
+  set_pin()
+
+
+set_pin = ->
+  map = $('#map_photo')
+  map.css 'cursor', 'url(<%= asset_path "flag.png" %>), auto'
+  map.on 'click', (e) ->
+			offset = $(this).offset()
+			left_offset = (e.pageX - (offset.left)) / $(this).width() * 100
+			top_offset = (e.pageY - (offset.top)) / $(this).height() * 100
+			add_pin left_offset, top_offset
+			map.off 'click'
+			map.css 'cursor', 'auto'
+	
+
+add_pin = (x, y) ->
+  map = $('#map_photo')
+  $('<div>').addClass('map_pin').attr('id', 'location_pin').css(
+    'left': x + '%'
+    'top': y + '%').appendTo '#map_photo'
+  $('#post_locX').val x
+  $('#post_locY').val y
+  
+
+
+$ ->
+	$('#map_form').hide()
+	if( $('#post_category_id option:selected').val() == '1' )
+		$('#map_form').fadeIn()
+		if( $('#post_locX').val() && $('#post_locY').val() )
+			$('<div>').addClass('map_pin').attr('id', 'location_pin').css(
+	    'left': $('#post_locX').val() + '%'
+	    'top': $('#post_locY').val() + '%').appendTo '#map_photo'
+		else
+			set_pin()
+
+		$('#refresh_pin_button').on 'click', ->
+	   	refresh_pin()
+	else
+		$('#map_form').fadeOut()
+
+$(document).on 'page:load', ->
+	$('#map_form').hide()
+
+	  
+

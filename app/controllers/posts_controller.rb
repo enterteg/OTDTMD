@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   end
   def update_form
     @category_id = params[:category_id]
-   
+
     respond_to do |format|
       format.js
     end 
@@ -48,6 +48,6 @@ private
 		@post = Post.find(params[:id])
 	end
 	def post_params
-		params.require(:post).permit(:title,:desc,:category_id)
+		params.require(:post).permit(:title,:desc,:category_id, :locX, :locY)
 	end
 end

@@ -45,26 +45,7 @@ body
 		.admin
 			float: right
 			line-height: $top_menu_height
-			.button
-				border-radius: 7px
-				margin-left: 5px
-				padding: 7px 15px
-				text-decoration: none
-				color: #555
-				+transition(0.3s ease all)
-				background-color:  rgba(150,0,150,0.05)
-				&:hover
-					background-color: rgba(140,0,150,0.1)
-					color: #333
-				&.logout
-					outline: none
-					background-color: transparent
-					padding: 0px
-					font-size: 0.9e
-					padding: 5px 10px
-					border-bottom: 1px solid white
-					&:hover
-						border-bottom: 1px solid #ccc
+			
 					
 
 		.social
@@ -142,28 +123,28 @@ section
 
 
 			
-//--------- map styles
-
-#refresh_pin_button
-	padding: 10px
-	background: #ccc
-	border-radius: 4px
-	float: left
-	cursor: pointer
-#map_photo
-	float: left
-	width: 50%
-	position: relative
-	z-index: 1
-	img
-		width: 100%
-.map_pin 
-	position: absolute
-	width: 20px
-	height: 20px
-	background-image: url(image_path('flag.png'))
-	z-index: 10
-	transition: 0.3s ease all
+.button
+	letter-spacing: 0.5px
+	border-radius: 7px
+	margin-left: 5px
+	padding: 9px 15px
+	text-decoration: none
+	color: #333
+	+transition(0.3s ease all)
+	background-color:  rgba(150,0,150,0.2)
 	&:hover
-		cursor: pointer
-		+transform(translateY(-2px))
+		color: white
+		background-color: rgba(140,0,150,0.3)
+	&.logout
+		color: black
+		outline: none
+		font-weight: 100
+		background-color: transparent
+		padding: 0px
+		font-size: 0.9e
+		padding: 5px 10px
+		border-bottom: 1px solid white
+		border-top: 1px solid white
+		&:hover
+			border-bottom: 1px solid #ccc
+			border-top: 1px solid #ccc
