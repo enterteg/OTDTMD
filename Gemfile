@@ -29,7 +29,7 @@ gem 'paperclip', '~> 4.3', '>= 4.3.6'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'puma'
-
+gem 'tinymce-rails' 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

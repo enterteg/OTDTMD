@@ -1,9 +1,7 @@
 @import 'mixins'
-
-
 //--------- form styles
 #new_post
-	max-width: 600px
+	max-width: 700px
 	margin: 50px auto
 	.submit
 		text-align: center
@@ -11,22 +9,27 @@
 			&[type="submit"]
 				margin: 0 auto
 				padding: 10px 20px
-				background: rgba(200,50,200,0.35)
-				outline: none
-				font-size: 1.3rem
+				background: white
+				color: rgba(150,50,150,0.75)
+				outline: 1px solid rgba(150,50,150,0.35)
+				font-size: 1.6rem
 				font-family: 'Roboto'
 				border: none
-				color: white
 				cursor: pointer
-				font-weight: bold
 				+transition(0.2s ease all)
 				&:hover
+					color: white
 					background: rgba(200,50,200,0.5)
 	.input 
 		margin: 20px 0px
 		display: flex
 		flex-direction: column
+		#mceu_28 
+			#post_desc_ifr 
+				body#tinymce
+					font-size: 30px
 		.upload
+			float: left
 			text-align: center
 			width: 90px
 			line-height: 35px
@@ -52,9 +55,7 @@
 		input
 			flex-grow: 1
 			padding: 10px
-			&[type="submit"]
-				padding: 20px
-				color: red
+
 			&[type="file"]
 				display: block
 				width: 90px
@@ -63,15 +64,15 @@
 				top: 0px
 				left: 0px
 				position: absolute
-				background-color: red
 				cursor: pointer
 
 		label
+			font-size: 1.2rem
 			margin: 10px 0px
 		textarea
 			height: 400px
 			resize: vertical
-			padding: 20px
+			padding: 10px
 		input, textarea, select
 			font-family: 'Roboto'
 			font-size: 1rem
@@ -79,7 +80,7 @@
 				outline: 2px solid rgba(250,0,250,0.1)
 		
 
-
+	
 
 
 //--------- map styles

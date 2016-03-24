@@ -12,7 +12,7 @@
 		= f.text_field :title
 	.input
 		= f.label :desc, 'Content'
-		= f.text_area :desc
+		= f.text_area :desc, class: "tinymce"
 	.input
 		= label_tag :photos, 'Photos'
 		.upload

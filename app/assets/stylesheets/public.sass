@@ -7,6 +7,11 @@ body
 	padding: 0
 	font-family: 'Roboto', sans-serif
 	font-size: 16px
+body#tinymce
+	padding: 10px
+	padding-top: 0px
+	font-family: 'Roboto', sans-serif
+	font-weight: 100
 .container
 	max-width: 1000px
 	margin: 0 auto
@@ -24,7 +29,7 @@ body
 			float: left
 			margin: 0px 15px
 		ul
-			color: rgba(250,20,250,1)
+			color: rgba(100,20,150,0.5)
 			padding: 0px
 			margin: 0px
 			line-height: $top_menu_height
@@ -45,8 +50,17 @@ body
 		.admin
 			float: right
 			line-height: $top_menu_height
-			
-					
+			.logout
+				background: none
+				color: rgba(0,0,0,0.7)
+				padding: 5px
+				outline: none
+				font-weight: 100
+				&:hover
+					color: black
+					border-bottom: 2px solid rgba(200,50,200,0.5)
+			.stats
+
 
 		.social
 			float: right
@@ -124,27 +138,14 @@ section
 
 			
 .button
-	letter-spacing: 0.5px
-	border-radius: 7px
-	margin-left: 5px
-	padding: 9px 15px
 	text-decoration: none
-	color: #333
-	+transition(0.3s ease all)
-	background-color:  rgba(150,0,150,0.2)
+	margin-left: 5px
+	padding: 8px 18px
+	color: rgba(150,50,150,0.8)
+	font-size: 1.1rem
+	cursor: pointer
+	+transition(0.2s ease all)
+	outline: 1px solid rgba(200,50,200,0.2)
 	&:hover
 		color: white
-		background-color: rgba(140,0,150,0.3)
-	&.logout
-		color: black
-		outline: none
-		font-weight: 100
-		background-color: transparent
-		padding: 0px
-		font-size: 0.9e
-		padding: 5px 10px
-		border-bottom: 1px solid white
-		border-top: 1px solid white
-		&:hover
-			border-bottom: 1px solid #ccc
-			border-top: 1px solid #ccc
+		background: rgba(200,50,200,0.4)

@@ -37,6 +37,11 @@ add_pin = (x, y) ->
 
 
 $ ->
+	tinyMCE.init {
+		selector: 'textarea#post_desc',  
+		content_css : '<%= asset_path 'public.sass'%>'  
+	}
+
 	$('#map_form').hide()
 	if( $('#post_category_id option:selected').val() == '1' )
 		$('#map_form').fadeIn()
@@ -54,6 +59,11 @@ $ ->
 
 $(document).on 'page:load', ->
 	$('#map_form').hide()
+	tinyMCE.init {
+		selector: 'textarea#post_desc',  
+		content_css : '<%= asset_path 'public.sass'%>'  
+	}
+	
 
-	  
-
+$(document).on 'page:receive', ->
+	tinymce.remove()
