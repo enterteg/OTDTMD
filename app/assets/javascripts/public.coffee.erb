@@ -1,0 +1,7 @@
+$ ->
+	$('#notice').hide().fadeIn().delay(1000).fadeOut()
+
+$(window).on 'scroll', ->
+	position = -1 * $('.post').height() * 0.4
+	$('#roll_map').css({transform: 'translateY(' + position + 'px)'})
+	console.log $(window).offset()

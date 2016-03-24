@@ -2,91 +2,50 @@
 //--------- form styles
 #new_post
 	max-width: 700px
-	margin: 50px auto
-	.submit
-		text-align: center
-		input
-			&[type="submit"]
-				margin: 0 auto
-				padding: 10px 20px
-				background: white
-				color: rgba(150,50,150,0.75)
-				outline: 1px solid rgba(150,50,150,0.35)
-				font-size: 1.6rem
-				font-family: 'Roboto'
-				border: none
-				cursor: pointer
-				+transition(0.2s ease all)
-				&:hover
-					color: white
-					background: rgba(200,50,200,0.5)
-	.input 
-		margin: 20px 0px
-		display: flex
-		flex-direction: column
-		#mceu_28 
-			#post_desc_ifr 
-				body#tinymce
-					font-size: 30px
-		.upload
-			float: left
-			text-align: center
-			width: 90px
-			line-height: 35px
-			border-radius: 8px
-			box-shadow: 0px 0px 0px 1px rgba(100,0,150,0.5)
-			color: black
-			font-size: 1.2rem
-			position: relative
-			+transition(0.2s ease all)
-
-			&:hover
-				font-weight: bold
-				background: rgba(200,50,200,0.4)
-				box-shadow: none
-				color: white
-				cursor: pointer
-		select
-			padding: 10px
-			background: transparent
-			&:hover
-				cursor: pointer
+	margin: 80px auto
+	ul.errors
+		color: red
+.edit
+	float: left
 	
-		input
-			flex-grow: 1
-			padding: 10px
-
-			&[type="file"]
-				display: block
-				width: 90px
-				height: 35px
-				opacity: 0
-				top: 0px
-				left: 0px
-				position: absolute
-				cursor: pointer
-
-		label
-			font-size: 1.2rem
-			margin: 10px 0px
-		textarea
-			height: 400px
-			resize: vertical
-			padding: 10px
-		input, textarea, select
-			font-family: 'Roboto'
-			font-size: 1rem
-			&:focus
-				outline: 2px solid rgba(250,0,250,0.1)
-		
+section
+	margin: 80px 0px
+	.post
+		max-width: 700px
+		margin: 0 auto
+		font-family: 'Raleway'
+		header
+			line-height: 1.5
+			padding: 10px 50px 10px 5px
+			font-size: 2.1rem
+		footer
+			font-size: 0.9rem
+			line-height: 2
+			&:before
+				content: ''
+				width: 80%
+				height: 1px
+				display: inline-block
+				background: #ccc
+				position: relative
+				top: -4px
+				margin-right: 10px
+		article
+			font-weigth: 100
+			padding: 10px 10px
+			width: 90%
+			text-align: justify
+			line-height: 1.4
+			font-size: 1.2rem		
 
 	
-
+.field_with_errors
+	margin-bottom: 10px
 
 //--------- map styles
-#map_form
-	margin: 50px auto
-	max-width: 1100px
+
+
+
 #refresh_pin_button
 	border-radius: 8px
 	box-shadow: 0px 0px 0px 1px rgba(100,0,150,0.5)
@@ -96,14 +55,21 @@
 	width: 90px
 	margin-bottom: 3px
 	+transition(0.2s ease all)
+	position: absolute
+	z-index: 20
 	&:hover
 		background: rgba(200,50,200,0.5)
 		box-shadow: none
 		color: white
 		cursor: pointer
-#map_photo
+#roll_map
 	position: relative
-	z-index: 1
+	display: block
+	z-index: -1
+#map_photo
+
+	position: relative
+	z-index: -1
 	img
 		width: 100%
 .map_pin 

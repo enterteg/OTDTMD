@@ -24,12 +24,17 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'haml', '~> 4.0', '>= 4.0.7'
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
+
+# -------------- my gems
+gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'puma'
-gem 'tinymce-rails' 
+gem 'tinymce-rails'
+gem 'dropzonejs-rails' 
+#------------------
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

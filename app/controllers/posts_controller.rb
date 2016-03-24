@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def create
   	@post = Post.new(post_params)
   	if @post.save
-  		redirect_to @post, notice: 'Post created successfully'
+  		redirect_to @post, notice: 'Post added successfully'
   	else
   		flash.now.notice = 'Some errors occured, cannot create post.'
   		render :new

@@ -2,6 +2,7 @@ refresh_pin = function() {
   $('#location_pin').remove();
   $('#map_photo').off('click');
   set_pin();
+  $('#refresh_pin_button').fadeOut();
 };
 
 set_pin = function() {
@@ -15,7 +16,7 @@ set_pin = function() {
     add_pin(left_offset, top_offset);
     map.off('click');
     map.css('cursor', 'auto');
-
+    $('#refresh_pin_button').fadeIn()
   });
 };
 
@@ -32,7 +33,9 @@ add_pin = function(x, y) {
 
 
 <% if @category_id.to_i == 1 %>
+  $('#refresh_pin_button').hide();
 	$('#map_form').slideDown();
+
 	set_pin();
 	$('#refresh_pin_button').click(function(e) {
    	refresh_pin();

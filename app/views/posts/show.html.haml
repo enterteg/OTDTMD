@@ -1,0 +1,17 @@
+.container
+	%section
+		.post
+			%header= @post.title
+			%footer= @post.created_at.strftime('%d/%m/%Y')
+			%article= @post.desc.html_safe
+			= link_to :back do
+				.button.edit back
+			- if current_user
+				= link_to edit_post_path(@post) do
+					.button.edit edit
+
+	- if @post.category_id == 1
+		#roll_map
+			#map_photo
+				= image_tag 'map.jpg'
+				.map_pin#location_pin{style: "left: #{@post.locX}%; top: #{@post.locY}%"}

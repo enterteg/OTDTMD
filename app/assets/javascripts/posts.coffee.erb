@@ -7,12 +7,15 @@ $(document).on 'change', '#post_category_id', ->
 
 
 
-	
-refresh_pin = ->
-  $('#location_pin').remove()
-  $('#map_photo').off 'click'
-  set_pin()
 
+add_pin = (x, y) ->
+  map = $('#map_photo')
+  $('<div>').addClass('map_pin').attr('id', 'location_pin').css(
+    'left': x + '%'
+    'top': y + '%').appendTo '#map_photo'
+  $('#post_locX').val x
+  $('#post_locY').val y
+  
 
 set_pin = ->
   map = $('#map_photo')
@@ -24,41 +27,47 @@ set_pin = ->
 			add_pin left_offset, top_offset
 			map.off 'click'
 			map.css 'cursor', 'auto'
-	
+			$('#refresh_pin_button').show()
 
-add_pin = (x, y) ->
-  map = $('#map_photo')
-  $('<div>').addClass('map_pin').attr('id', 'location_pin').css(
-    'left': x + '%'
-    'top': y + '%').appendTo '#map_photo'
-  $('#post_locX').val x
-  $('#post_locY').val y
-  
 
+refresh_pin = ->
+  $('#location_pin').remove()
+  $('#map_photo').off 'click'
+  set_pin()
+  $('#refresh_pin_button').hide()
+  $('#post_locX').val ''
+  $('#post_locY').val ''
+
+
+set_map = ->
+	$('#map_form').hide()
+	if( $('#post_category_id option:selected').val() == '1' )
+		$('#map_form').fadeIn()
+		if( $('#post_locX').val() && $('#post_locY').val() )
+			$('#refresh_pin_button').show()
+			
+			$('<div>').addClass('map_pin').attr('id', 'location_pin').css(
+		    'left': $('#post_locX').val() + '%'
+		    'top': $('#post_locY').val() + '%').appendTo '#map_photo'
+		else
+			set_pin()
+			$('#refresh_pin_button').hide()
+		$('#refresh_pin_button').on 'click', ->
+   			refresh_pin()
+	else
+		$('#map_form').fadeOut()
 
 $ ->
+	set_map()
 	tinyMCE.init {
 		selector: 'textarea#post_desc',  
 		content_css : '<%= asset_path 'public.sass'%>'  
 	}
 
-	$('#map_form').hide()
-	if( $('#post_category_id option:selected').val() == '1' )
-		$('#map_form').fadeIn()
-		if( $('#post_locX').val() && $('#post_locY').val() )
-			$('<div>').addClass('map_pin').attr('id', 'location_pin').css(
-	    'left': $('#post_locX').val() + '%'
-	    'top': $('#post_locY').val() + '%').appendTo '#map_photo'
-		else
-			set_pin()
-
-		$('#refresh_pin_button').on 'click', ->
-	   	refresh_pin()
-	else
-		$('#map_form').fadeOut()
+	
 
 $(document).on 'page:load', ->
-	$('#map_form').hide()
+	set_map()
 	tinyMCE.init {
 		selector: 'textarea#post_desc',  
 		content_css : '<%= asset_path 'public.sass'%>'  
@@ -67,3 +76,5 @@ $(document).on 'page:load', ->
 
 $(document).on 'page:receive', ->
 	tinymce.remove()
+
+

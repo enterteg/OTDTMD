@@ -12,11 +12,25 @@ body#tinymce
 	padding-top: 0px
 	font-family: 'Roboto', sans-serif
 	font-weight: 100
+.container_mini
+	max-width: 500px
+	margin: 0 auto
+	padding: 0px 10px
 .container
+	z-index: -10
 	max-width: 1000px
 	margin: 0 auto
-	background: white
 	padding: 0px 10px
+#notice
+	position: fixed
+	z-index: 999
+	top: 200px
+	line-height: 10vh
+	font-size: 3vh
+	text-align: center
+	width: 100%
+	background-color: rgba(165,63,132,0.78)
+	color: white
 #top_menu
 	float: left
 	height: $top_menu_height
@@ -81,35 +95,7 @@ body#tinymce
 				&:hover
 					opacity: 0.7
 
-section
-	margin: 100px 0px
-	.post
-		max-width: 600px
-		margin: 0 auto
-		font-family: 'Raleway'
-		header
-			margin-left: 10px
-			font-size: 2rem
-		footer
-			font-size: 0.9rem
-			line-height: 2
-			&:before
-				content: ''
-				width: 80%
-				height: 1px
-				display: inline-block
-				background: #ccc
-				position: relative
-				top: -4px
-				margin-right: 10px
-		article
-			
-			font-weigth: 200
-			padding: 15px 10px
-			width: 90%
-			text-align: justify
-			line-height: 1.4
-			font-size: 1.2rem
+
 
 #logo_banner
 	clear: both
