@@ -13,13 +13,17 @@
 						=link_to :root do
 							#logo_image
 						%ul
-							%li= 'my life'
+							= link_to '/life' do
+								%li= 'my life'
 							|
-							%li= 'travels'
+							= link_to '/travels' do
+								%li= 'travels'
 							|
-							%li= 'food'
+							= link_to '/food' do
+								%li= 'food'
 							|
-							%li= 'about me'
+							= link_to '/about' do
+								%li= 'about me'
 						.right
 							-if current_user
 								.admin

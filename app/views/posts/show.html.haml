@@ -9,6 +9,8 @@
 			- if current_user
 				= link_to edit_post_path(@post) do
 					.button.edit edit
+				= link_to @post, method: 'delete', data: {confirm: 'Are you sure?'} do
+					.button.edit destroy
 
 	- if @post.category_id == 1
 		#roll_map

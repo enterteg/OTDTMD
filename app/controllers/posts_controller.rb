@@ -8,6 +8,11 @@ class PostsController < ApplicationController
   def create
   	@post = Post.new(post_params)
   	if @post.save
+      if params[:photos]
+        params[:photos].each do |photo|
+          @post.photos.create(photo: photo)
+        end
+      end
   		redirect_to @post, notice: 'Post added successfully'
   	else
   		flash.now.notice = 'Some errors occured, cannot create post.'
@@ -22,6 +27,11 @@ class PostsController < ApplicationController
 
   def update
   	if @post.update(post_params)
+       if params[:photos]
+        params[:photos].each do |photo|
+          @post.photos.create(photo: photo)
+        end
+      end
   		redirect_to @post, notice: 'Post updated successfully'
   	else
   		flash.now.notice = 'Some errors occured, cannot update post.'

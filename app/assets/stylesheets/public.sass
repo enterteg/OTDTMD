@@ -9,13 +9,19 @@ body
 	font-size: 16px
 body#tinymce
 	padding: 10px
+	font-size: 20px
+	font-family: times-new-roman
 	padding-top: 0px
-	font-family: 'Roboto', sans-serif
-	font-weight: 100
+
+hr
+	border: none
+	border-top: 1px solid rgba(100,0,200,0.1)
+	margin-bottom: 60px
 .container_mini
 	max-width: 500px
 	margin: 0 auto
 	padding: 0px 10px
+	z-index: -10
 .container
 	z-index: -10
 	max-width: 1000px
@@ -49,18 +55,20 @@ body#tinymce
 			line-height: $top_menu_height
 			float: left
 			list-style-type: none
-			li
-				color: black
-				font-size: 1.3rem
-				display: inline
-				margin: 0px 2px
-				padding: 3px 5px
-				border-top: 0px solid white
-				+transition(0.5s border)
-				&:hover
-					position: relative
-					cursor: pointer
-					border-top: 30px solid rgba(150,0,200,0.1)
+			a
+				text-decoration: none
+				li
+					color: black
+					font-size: 1.3rem
+					display: inline
+					margin: 0px 2px
+					padding: 3px 5px
+					border-top: 0px solid white
+					+transition(0.5s border)
+					&:hover
+						position: relative
+						cursor: pointer
+						border-top: 30px solid rgba(150,0,200,0.1)
 		.admin
 			float: right
 			line-height: $top_menu_height
@@ -122,7 +130,13 @@ body#tinymce
 			font-size: 5rem
 
 
-			
+#map
+	max-width: 1100px
+	margin: 50 auto
+.header
+	font-size: 3rem
+	text-align: center
+	padding: 30px 10px
 .button
 	text-decoration: none
 	margin-left: 5px
@@ -134,4 +148,4 @@ body#tinymce
 	outline: 1px solid rgba(200,50,200,0.2)
 	&:hover
 		color: white
-		background: rgba(200,50,200,0.4)
+		background: rgba(150,50,200,0.4)

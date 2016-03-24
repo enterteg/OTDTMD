@@ -1,9 +1,11 @@
-.post
-	%header= @post.title
-	%footer= @post.created_at.strftime('%d/%m/%Y')
-	%article.samlpe= @post.desc.html_safe
-	= link_to @post do
-		.button.edit 'read...'
+.post.sample
+	%header.sample= post.title
+	%footer.sample= post.created_at.strftime('%d/%m/%Y')
+	%article.samlpe_art= post.desc.truncate_words(30).html_safe
+	= link_to post do
+		.button.edit= 'read more...'
 	- if current_user
-		= link_to edit_post_path(@post) do
+		= link_to edit_post_path(post) do
 			.button.edit edit
+	.clear.shadow
+
