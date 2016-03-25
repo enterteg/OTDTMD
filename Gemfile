@@ -34,6 +34,7 @@ gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'puma'
 gem 'tinymce-rails'
 gem 'dropzonejs-rails' 
+gem 'truncate_html', '~> 0.9.3'
 #------------------
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

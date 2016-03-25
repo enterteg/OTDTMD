@@ -1,7 +1,7 @@
 .post.sample
 	%header.sample= post.title
 	%footer.sample= post.created_at.strftime('%d/%m/%Y')
-	%article.samlpe_art= post.desc.truncate_words(35).html_safe
+	%article.samlpe_art= truncate_html post.desc, length: 300
 	-if post.photos.any?	
 		.photos.mini
 			-post.photos.each_with_index do |photo, i|
