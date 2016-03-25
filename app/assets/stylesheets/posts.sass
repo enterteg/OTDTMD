@@ -37,15 +37,11 @@
 				opacity: 1
 				cursor: pointer
 	&.mini
-		margin: 0 auto
-		max-width: 460px
+		margin: 0 auto 20
 		display: flex
-		flex-wrap: wrap
-		item-align: center
-		justify-content: center
+		justify-content: space-around
 		img
-			margin: 15px
-			float: left
+			display: block
 section
 	margin: 80px 0px
 	.post
@@ -54,9 +50,9 @@ section
 		font-family: 'Raleway'
 		position: relative
 		&.sample
-			padding: 35px 0px 25px 45px
+			padding: 35px 65px 25px
+			max-width: 620px
 			outline: 1px dashed rgba(0,0,0,0.2)
-			max-width: 650px
 			&:before 
 				content: ""
 				position: absolute
@@ -77,7 +73,7 @@ section
 			line-height: 2
 			&:before
 				content: ''
-				width: 80%
+				width: 85%
 				height: 1px
 				display: inline-block
 				background: #ccc
@@ -85,9 +81,8 @@ section
 				top: -4px
 				margin-right: 10px
 		article
+			padding: 20px 0px 
 			font-weigth: 100
-			padding: 10px 10px
-			width: 90%
 			text-align: justify
 			line-height: 1.4
 			font-size: 1.2rem	
@@ -130,8 +125,6 @@ section
 	margin-top: 150p
 	padding: 30px 20px 0px 20px
 #map_photo
-	
-	margin-top: 150px
 	position: relative
 	z-index: 1
 	img
@@ -151,7 +144,7 @@ section
 			padding: 10px
 			padding-right: 30px
 			width: 150px
-			height: 55px
+			height: 65px
 			font-size: 0.9rem
 			position: relative
 			left: 5px

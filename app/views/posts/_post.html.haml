@@ -1,13 +1,13 @@
 .post.sample
 	%header.sample= post.title
 	%footer.sample= post.created_at.strftime('%d/%m/%Y')
-	%article.samlpe_art= post.desc.truncate_words(30).html_safe
+	%article.samlpe_art= post.desc.truncate_words(35).html_safe
 	-if post.photos.any?	
 		.photos.mini
 			-post.photos.each_with_index do |photo, i|
 				- break if i == 4
-				= image_tag photo.photo.url(:thumb)
-			.clear
+				= link_to (photo.photo.url(:large)) do
+					= image_tag photo.photo.url(:thumb)
 	= link_to post do
 		.button.edit= 'read more...'
 	- if current_user

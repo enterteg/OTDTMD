@@ -59,7 +59,9 @@ class PostsController < ApplicationController
     @photo = Photo.find(params[:id])
     
     if @photo.destroy
-      redirect_to edit_post_path(@photo.post), notice: 'Photo succesfully deleted'
+      respond_to do |format|
+        format.js
+      end
     else
       render :edit, notice: 'Cannot destroy photo'
     end
