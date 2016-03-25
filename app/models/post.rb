@@ -3,7 +3,6 @@ class Post < ActiveRecord::Base
 	belongs_to :category
 	has_many :photos
 
-
 	default_scope { order(created_at: :desc)}
 	
 	scope :travel, -> { where(category_id: 1)}

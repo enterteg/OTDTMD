@@ -1,4 +1,4 @@
-=form_for @post, html: {id: 'new_post'} do |f|
+=form_for @post, html: {multipart: true, id: 'new_post'} do |f|
 	-if @post.errors.any?
 		%ul.errors
 			- @post.errors.full_messages.each do |msg|
@@ -14,7 +14,15 @@
 		= f.label :desc, 'Content'
 		= f.text_area :desc, class: "tinymce"
 	
-	= file_field_tag "photos[]", type: :file, multiple: true, name: 'file', class: 'dropzone'
+	= file_field_tag "photos[]", type: :file, multiple: true
+	-if @post.photos.any?
+		.photos
+			-@post.photos.each do |photo|
+				.image
+					= image_tag photo.photo.url(:thumb), id: "photo_#{photo.id}"
+					= link_to 'X', destroy_photo_path(photo.id), method: :delete, data: { confirm: 'Usunąć zdjęcie?' },class: 'destroy_photo'
+					.clear
+			.clear
 	.submit
 		= f.submit
 	= f.number_field :locX, type: 'hidden'

@@ -4,6 +4,12 @@
 			%header= @post.title
 			%footer= @post.created_at.strftime('%d/%m/%Y')
 			%article= @post.desc.html_safe
+			-if @post.photos.any?	
+				.photos
+					-@post.photos.each do |photo|
+						= image_tag photo.photo.url(:thumb)
+					.clear
+
 			= link_to :back do
 				.button.edit back
 			- if current_user

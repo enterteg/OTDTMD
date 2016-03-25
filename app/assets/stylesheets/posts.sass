@@ -8,26 +8,63 @@
 .edit
 	margin-top: 20px
 	float: left
-	
+.photos
+	margin: 40px 20px
+	width: 100%
+	.image
+		float: left
+		position: relative
+		img
+			float: left
+			margin: 10px
+		a.destroy_photo
+			color: black
+			text-decoration: none
+			text-align: center
+			line-height: 17px
+			font-weight: bold
+			padding: 3px
+			opacity: 0.5
+			right: 20px
+			top: 20px
+			position: absolute
+			display: block
+			width: 15px
+			height: 15px
+			background: white
+			z-index: 10
+			&:hover
+				opacity: 1
+				cursor: pointer
+	&.mini
+		margin: 0 auto
+		max-width: 460px
+		display: flex
+		flex-wrap: wrap
+		item-align: center
+		justify-content: center
+		img
+			margin: 15px
+			float: left
 section
 	margin: 80px 0px
 	.post
-		padding: 35px 0px 25px 45px
-		outline: 1px dashed rgba(0,0,0,0.2)
 		max-width: 700px
 		margin: 50px auto
 		font-family: 'Raleway'
 		position: relative
 		&.sample
+			padding: 35px 0px 25px 45px
+			outline: 1px dashed rgba(0,0,0,0.2)
 			max-width: 650px
-		&:before 
-			content: ""
-			position: absolute
-			top: -1
-			right: -1
-			border-width: 0 50px 50px 0
-			border-style: solid
-			border-color: rgba(150,0,150,0.1) white
+			&:before 
+				content: ""
+				position: absolute
+				top: -1
+				right: -1
+				border-width: 0 50px 50px 0
+				border-style: solid
+				border-color: rgba(150,0,150,0.1) white
 		header
 			line-height: 1.5
 			padding: 10px 50px 10px 5px
@@ -90,9 +127,11 @@ section
 #map_form
 	max-width: 1100px
 	margin: 0 auto
-	margin-top: 50px
+	margin-top: 150p
 	padding: 30px 20px 0px 20px
 #map_photo
+	
+	margin-top: 150px
 	position: relative
 	z-index: 1
 	img

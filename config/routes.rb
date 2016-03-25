@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   post 'update_form' => 'posts#update_form'
-
+  delete 'destroy_photo/:id' => 'posts#destroy_photo', as: :destroy_photo
   
 
   post 'login' => 'session#create', as: :login

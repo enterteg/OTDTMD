@@ -4,22 +4,22 @@ class PublicController < ApplicationController
   end
 
   def index
-  	@posts = Post.all.limit(6)
+  	@posts = Post.limit(4).includes(:photos)
   end
 
   def travels
-  	@posts = Post.travel.limit(3)
+  	@posts = Post.includes(:photos).travel.limit(3)
     @pins = Post.travel.pluck(:locX, :locY, :id, :title, :created_at)
     @controller = 'travels'
   end
 
   def food
-  	@posts = Post.food.limit(6)
+  	@posts = Post.includes(:photos).food.limit(4)
     @controller = 'food'
   end
 
   def life
-  	@posts = Post.life.limit(6)
+  	@posts = Post.includes(:photos).life.limit(4)
     @controller = 'life'
   end
 
