@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 # -------------- my gems
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
-gem 'puma'
+gem 'pg'
 gem 'tinymce-rails'
 gem 'dropzonejs-rails' 
 gem 'truncate_html', '~> 0.9.3'
