@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 	validate :validate_travel_pin
 	belongs_to :category
-	has_many :photos
+	has_many :photos, dependent: :destroy
 
 	default_scope { order(created_at: :desc)}
 	

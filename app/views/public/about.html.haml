@@ -5,10 +5,10 @@
 			.desc
 				= @post.desc.html_safe
 
-				= link_to :back do
-					.button.edit back
-					- if current_user
-						= link_to edit_post_path(@post) do
-							.button.edit edit
-						= link_to @post, method: 'delete', data: {confirm: 'Are you sure?'} do
-							.button.edit destroy
+			= link_to :back do
+				.button.edit back
+				- if current_user
+					= link_to edit_post_path(@post) do
+						.button.edit edit
+					= link_to @post, method: 'delete', data: {confirm: 'Are you sure?'} do
+						.button.edit destroy

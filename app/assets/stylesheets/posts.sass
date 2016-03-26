@@ -74,7 +74,6 @@ section
 		&.sample
 			padding: 35px 65px 25px
 			max-width: 620px
-			outline: 1px dashed rgba(180,0,200,0.5)
 			box-shadow: 0px 0px 50px rgba(0,0,0,0.05)
 			z-index: 10
 			&:after
@@ -95,14 +94,17 @@ section
 				border-style: solid
 				border-color: rgba(121,203,250,0.65) white
 			&.travels
+				outline: 1px dashed rgba(0,253,150,0.65)
 				&:before
-					border-color: rgba(250,203,250,0.65) white
+					border-color: rgba(0,253,150,0.65) white
 			&.food
+				outline: 1px dashed rgba(250,53,250,0.65)
 				&:before
 					border-color: rgba(250,53,250,0.65) white
 			&.life
+				outline: 1px dashed rgba(250,150,100,0.65)
 				&:before
-					border-color: rgba(0,53,250,0.65) white
+					border-color: rgba(250,130,100,0.65) white
 
 
 		header
@@ -164,11 +166,11 @@ section
 #roll_map
 	position: relative
 	display: block
-	opacity: 0.15
+	opacity: 0.1
 	width: 160%
 	+transform(translateX(-18%))
 	z-index: -4
-	top: -220px
+	top: -140px
 	height: 0px
 #map_form
 	max-width: 1100px
