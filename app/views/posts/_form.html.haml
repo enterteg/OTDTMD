@@ -20,12 +20,11 @@
 			-@post.photos.each do |photo|
 				.image{id: "photo_#{photo.id}"}
 					= image_tag photo.photo.url(:thumb)
-					= link_to 'X', destroy_photo_path(photo.id), method: :delete, remote: true, data: { confirm: 'Usunąć zdjęcie?' },class: 'destroy_photo'
+					= link_to 'x', destroy_photo_path(photo.id), method: :delete, remote: true, data: { confirm: 'Usunąć zdjęcie?' },class: 'destroy_photo'
 					.clear
 			.clear
 	.submit
 		= f.submit
 	= f.number_field :locX, type: 'hidden'
 	= f.number_field :locY, type: 'hidden'
-	= link_to 'Back', :back, class: 'button'
 	

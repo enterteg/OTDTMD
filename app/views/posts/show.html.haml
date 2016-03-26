@@ -4,10 +4,15 @@
 			%header= @post.title
 			%footer= @post.created_at.strftime('%d/%m/%Y')
 			%article= @post.desc.html_safe
+			- if @post.category_id == 1
+				#roll_map
+					#map_photo
+						= image_tag 'map.jpg'
+						.map_pin#location_pin{style: "left: #{@post.locX}%; top: #{@post.locY}%"}
 			-if @post.photos.any?	
 				.photos
 					-@post.photos.each do |photo|
-						= image_tag photo.photo.url(:thumb)
+						= image_tag photo.photo.url(:medium)
 					.clear
 
 			= link_to :back do
@@ -18,8 +23,4 @@
 				= link_to @post, method: 'delete', data: {confirm: 'Are you sure?'} do
 					.button.edit destroy
 
-	- if @post.category_id == 1
-		#roll_map
-			#map_photo
-				= image_tag 'map.jpg'
-				.map_pin#location_pin{style: "left: #{@post.locX}%; top: #{@post.locY}%"}
+		

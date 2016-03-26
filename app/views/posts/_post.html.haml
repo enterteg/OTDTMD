@@ -1,4 +1,4 @@
-.post.sample
+.post.sample{class: "#{post.category.name}"}
 	%header.sample= post.title
 	%footer.sample= post.created_at.strftime('%d/%m/%Y')
 	%article.samlpe_art= truncate_html post.desc, length: 300

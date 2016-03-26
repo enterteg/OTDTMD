@@ -4,7 +4,7 @@ class PublicController < ApplicationController
   end
 
   def index
-  	@posts = Post.limit(4).includes(:photos)
+  	@posts = Post.where.not(id: 1).limit(4).includes(:photos)
   end
 
   def travels
@@ -24,7 +24,6 @@ class PublicController < ApplicationController
   end
 
   def about
-    @controller = 'about'
   	@post = Post.find(1)
   end
   
