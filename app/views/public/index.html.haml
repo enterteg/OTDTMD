@@ -1,6 +1,6 @@
 - if @controller == 'travels'
 	#map
-		.header= 'All of my travels'
+		.header.travels= 'All of my travels'
 		#map_photo
 			= image_tag 'map.jpg'
 			- @pins.each do |pin|
@@ -11,6 +11,13 @@
 							.date= pin[4].strftime('%d/%m/%Y')
 .container		
 	%section
-		.header= 'Latests posts'
+		-if @controller == 'life'
+			.header= "My little world"
+		-elsif @controller == 'food'
+			.header.heart
+				= "Food"
+				=image_tag 'heart.png'
+		-else
+			.header= 'Latest posts'
 		-if @posts
 			= render @posts

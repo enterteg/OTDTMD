@@ -33,7 +33,11 @@ class PostsController < ApplicationController
           @post.photos.create(photo: photo)
         end
       end
-  		redirect_to @post, notice: 'Post updated successfully'
+      if @post.category_id == 4 
+        redirect_to '/about' 
+      else
+  		  redirect_to @post, notice: 'Post updated successfully'
+      end
   	else
   		flash.now.notice = 'Some errors occured, cannot update post.'
   		render :edit

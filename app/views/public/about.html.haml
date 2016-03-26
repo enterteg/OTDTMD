@@ -3,7 +3,7 @@
 		%article.about
 			.header= @post.title
 			.desc
-				= @post.desc
+				= @post.desc.html_safe
 
 				= link_to :back do
 					.button.edit back
