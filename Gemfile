@@ -36,6 +36,7 @@ gem 'dropzonejs-rails'
 gem 'truncate_html', '~> 0.9.3'
 gem 'lightbox2-rails'
 gem 'will_paginate', '~> 3.0.6'
+gem 'searchkick'
 #------------------
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

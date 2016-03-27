@@ -7,7 +7,7 @@ class PublicController < ApplicationController
   end
 
   def index
-  	@posts = Post.where.not(id: 1).paginate(page: params[:page], per_page: 1)
+  	@posts = Post.where.not(id: 1).paginate(page: params[:page], per_page: 4)
   end
 
   def travels
@@ -30,5 +30,11 @@ class PublicController < ApplicationController
   	@post = Post.find(1)
   end
   
-
+  def search
+    if params[:search].present? 
+      @posts = Post.search(params[:search])
+    else
+      redirect_to :index
+    end
+  end
 end

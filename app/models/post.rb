@@ -1,8 +1,9 @@
 class Post < ActiveRecord::Base
+	searchkick
+	
 	validate :validate_travel_pin
 	belongs_to :category
 	has_many :photos, dependent: :destroy
-
 
 
 
