@@ -129,11 +129,32 @@ section
 				top: -4px
 				margin-right: 10px
 		article
+			font-family: 'Roboto'
 			padding: 20px 0px 
-			font-weigth: 100
+			font-weight: 300
 			text-align: justify
 			line-height: 1.4
-			font-size: 1.2rem	
+			font-size: 1.1rem	
+	.pagination
+		text-align: center
+		padding: 10px 0px
+		font-size: 1.3rem
+		a
+			color: rgba(0,0,0,0.7)
+			text-decoration: none
+			padding: 8px 12px
+			background-color: rgba(250,50,150,0.2)
+			&:hover
+				background-color: rgba(250,50,150,0.4)
+		.current
+			color: rgba(200,50,100,1)
+			font-weight: bold
+			font-size: 1.5rem
+			font-style: normal
+			padding: 10px 15px
+			background-color: rgba(250,50,150,0.5)
+		.disabled
+			color: #ccc
 
 .clear 
 	clear: both

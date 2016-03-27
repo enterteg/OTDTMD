@@ -12,7 +12,8 @@
 			-if @post.photos.any?	
 				.photos
 					-@post.photos.each do |photo|
-						= image_tag photo.photo.url(:medium)
+						= link_to (photo.photo.url(:large)), data: {lightbox: 'example-set'} do
+							= image_tag photo.photo.url(:medium)
 					.clear
 
 			= link_to :back do

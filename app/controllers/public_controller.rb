@@ -1,25 +1,28 @@
 class PublicController < ApplicationController
+  
+
+
   rescue_from ActionView::MissingTemplate do
     render :index
   end
 
   def index
-  	@posts = Post.where.not(id: 1).limit(4).includes(:photos)
+  	@posts = Post.where.not(id: 1).paginate(page: params[:page], per_page: 1)
   end
 
   def travels
-  	@posts = Post.includes(:photos).travel.limit(3)
+  	@posts = Post.travel.paginate(page: params[:page], per_page: 3)
     @pins = Post.travel.pluck(:locX, :locY, :id, :title, :created_at)
     @controller = 'travels'
   end
 
   def food
-  	@posts = Post.includes(:photos).food.limit(4)
+  	@posts = Post.food.paginate(page: params[:page], per_page: 4)
     @controller = 'food'
   end
 
   def life
-  	@posts = Post.includes(:photos).life.limit(4)
+  	@posts = Post.life.paginate(page: params[:page], per_page: 4)
     @controller = 'life'
   end
 

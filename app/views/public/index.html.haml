@@ -21,3 +21,5 @@
 			.header= 'Latest posts'
 		-if @posts
 			= render @posts
+
+		= will_paginate @posts, previous_label: 'prev', next_label: 'older posts', inner_window: 1, outer_window: 1
