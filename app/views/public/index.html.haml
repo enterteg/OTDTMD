@@ -18,8 +18,10 @@
 				= "Food"
 				=image_tag 'heart.png'
 		-else
-			.header= 'Latest posts'
-		-if @posts
-			= render @posts
+			-if @posts.any?
+				.header= 'Latest posts'
+				= render @posts
 
-		= will_paginate @posts, previous_label: 'prev', next_label: 'older posts', inner_window: 1, outer_window: 1
+				= will_paginate @posts, previous_label: 'prev', next_label: 'older posts', inner_window: 1, outer_window: 1
+			- else
+				.header= 'No posts found :('

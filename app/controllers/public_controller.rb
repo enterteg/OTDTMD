@@ -34,7 +34,7 @@ class PublicController < ApplicationController
     if params[:search].present? 
       @posts = Post.search(params[:search])
     else
-      redirect_to :index
+      redirect_to action: :index
     end
   end
 end

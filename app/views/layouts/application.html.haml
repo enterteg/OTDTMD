@@ -24,22 +24,23 @@
 							|
 							= link_to '/about' do
 								%li= 'about me'
+						
+					-if current_user
+						.admin
+							=link_to '+ Add post', new_post_path, class: 'button add_post'
+							=link_to 'Statistics', stats_path, class: 'button stats'
+							=link_to 'Logout', logout_path, class: 'button logout'
+					- else
 						.search
 							= form_tag search_path, method: :get do
 								= text_field_tag :search
 								= submit_tag 'Search'
-						.right
-							-if current_user
-								.admin
-									=link_to '+ Add post', new_post_path, class: 'button add_post'
-									=link_to 'Statistics', stats_path, class: 'button stats'
-									=link_to 'Logout', logout_path, class: 'button logout'
-							- else
-								.social
-									=link_to 'https://www.facebook.com/dominika.jagiela?fref=ts' do
-										=image_tag 'fb-icon.png'	
-									=link_to 'gmail' do
-										=image_tag 'gmail-icon.png'	
+					/ - else
+					/ 	.social
+					/ 		=link_to 'https://www.facebook.com/dominika.jagiela?fref=ts' do
+					/ 			=image_tag 'fb-icon.png'	
+					/ 		=link_to 'gmail' do
+					/ 			=image_tag 'gmail-icon.png'	
 			#logo_banner
 				.banner_text
 					.smaller
