@@ -33,6 +33,7 @@ class PublicController < ApplicationController
   def search
     if params[:search].present? 
       @posts = Post.search(params[:search])
+      @controller = 'search'
     else
       redirect_to action: :index
     end

@@ -18,10 +18,15 @@
 				= "Food"
 				=image_tag 'heart.png'
 		-else
-			-if @posts.any?
-				.header= 'Latest posts'
-				= render @posts
-
-				= will_paginate @posts, previous_label: 'prev', next_label: 'older posts', inner_window: 1, outer_window: 1
+			- if @controller == 'search'
+				-if @posts.any?
+					.header= 'Found posts'
+				- else 
+					.header= 'No posts found :('
 			- else
-				.header= 'No posts found :('
+				.header= 'Latest posts'
+		-if @posts
+			= render @posts
+
+			= will_paginate @posts, previous_label: 'prev', next_label: 'older posts', inner_window: 1, outer_window: 1
+			
