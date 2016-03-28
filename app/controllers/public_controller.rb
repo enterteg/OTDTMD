@@ -25,7 +25,7 @@ class PublicController < ApplicationController
   end
 
   def about
-  	@post = Post.find(1).includes(:photos)
+  	@post = Post.includes(:photos).find(1)
   end
   
   def search

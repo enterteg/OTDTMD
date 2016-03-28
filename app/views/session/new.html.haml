@@ -5,6 +5,6 @@
 			= text_field_tag :login, '', autofocus: true
 		.input
 			= label_tag :password
-			= password_field_tag :password
+			= password_field_tag :password, '',autocomplete: 'off'
 		.submit
 			= submit_tag 'Log in'

@@ -2,13 +2,27 @@
 	%section
 		%article.about
 			.header= @post.title
+
+			.photos
+				= link_to 'https://www.facebook.com/dominika.jagiela?ref=ts&fref=ts' do
+					.icon= image_tag 'fb-icon.png'
+				- if @post.photos.any?
+					.portrait= image_tag @post.photos.first.photo.url
+				.icon#gmail
+					= image_tag 'gmail-icon.png'
+					.mail= 'dominikajagiela@gmail.com'
+
+			#map_photo
+				= image_tag 'map.jpg'	
 			.desc
 				= @post.desc.html_safe
 
-			= link_to :back do
-				.button.edit back
-				- if current_user
-					= link_to edit_post_path(@post) do
-						.button.edit edit
-					= link_to @post, method: 'delete', data: {confirm: 'Are you sure?'} do
-						.button.edit destroy
+				= link_to :back do
+					.button.edit back
+					- if current_user
+						= link_to edit_post_path(@post) do
+							.button.edit edit
+						= link_to @post, method: 'delete', data: {confirm: 'Are you sure?'} do
+							.button.edit destroy
+			
+			
