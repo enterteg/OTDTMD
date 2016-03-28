@@ -13,9 +13,10 @@
 	.input
 		= f.label :desc, 'Content'
 		= f.text_area :desc, class: "tinymce"
-	= f.label :photos
-	= f.attachinary_file_field :photos
-
+	.upload
+		= 'Drag & drop or click to add photos'
+		= f.attachinary_file_field :photos
+	.clear
 	.submit
 		= f.submit
 		

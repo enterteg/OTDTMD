@@ -7,7 +7,8 @@
 			-post.photos.each_with_index do |photo, i|
 				- break if i == 4
 				= link_to (cloudinary_url photo.path), data: {lightbox: 'example-set'} do
-					= cl_image_tag photo.path, size: '170x150', crop: :fill
+					= cl_image_tag photo.path, size: '200x100', crop: :fill
+			.clear
 	= link_to post do
 		.button.edit= 'read more...'
 	- if current_user

@@ -7,7 +7,7 @@
 				= link_to 'https://www.facebook.com/dominika.jagiela?ref=ts&fref=ts' do
 					.icon= image_tag 'fb-icon.png'
 				- if @post.photos.any?
-					.portrait= image_tag @post.photos.first.photo.url
+					.portrait= cl_image_tag @post.photos.first.path
 				.icon#gmail
 					= image_tag 'gmail-icon.png'
 					.mail= 'dominikajagiela@gmail.com'
