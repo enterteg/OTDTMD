@@ -8,11 +8,6 @@ class PostsController < ApplicationController
   def create
   	@post = Post.new(post_params)
   	if @post.save
-      if params[:photos]
-        params[:photos].each do |photo|
-          @post.photos.create(photo: photo)
-        end
-      end
   		redirect_to @post, notice: 'Post added successfully'
   	else
   		flash.now.notice = 'Some errors occured, cannot create post.'
@@ -28,13 +23,8 @@ class PostsController < ApplicationController
 
   def update
   	if @post.update(post_params)
-       if params[:photos]
-        params[:photos].each do |photo|
-          @post.photos.create(photo: photo)
-        end
-      end
       if @post.category_id == 4 
-        redirect_to '/about' 
+        redirect_to '/about', notice: 'About me updated successfully'
       else
   		  redirect_to @post, notice: 'Post updated successfully'
       end
@@ -78,9 +68,9 @@ private
 		@post = Post.find(params[:id])
 	end
   def find_post_with_photos
-    @post = Post.includes(:photos).find(params[:id])
+    @post = Post.includes(:photo_files).find(params[:id])
   end
 	def post_params
-		params.require(:post).permit(:title,:desc,:category_id, :locX, :locY)
+		params.require(:post).permit(:title,:desc,:category_id, :locX, :locY, photos: [])
 	end
 end

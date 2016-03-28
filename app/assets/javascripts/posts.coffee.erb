@@ -58,6 +58,7 @@ set_map = ->
 		$('#map_form').fadeOut()
 
 $ ->
+	$('.attachinary-input').attachinary()
 	set_map()
 	tinyMCE.init {
 		selector: 'textarea#post_desc',  
@@ -67,6 +68,7 @@ $ ->
 	
 
 $(document).on 'page:load', ->
+	$('.attachinary-input').attachinary()
 	set_map()
 	tinyMCE.init {
 		selector: 'textarea#post_desc',  

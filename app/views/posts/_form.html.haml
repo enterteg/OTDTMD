@@ -13,16 +13,9 @@
 	.input
 		= f.label :desc, 'Content'
 		= f.text_area :desc, class: "tinymce"
-	
-	= file_field_tag "photos[]", type: :file, multiple: true
-	-if @post.photos.any?
-		.photos
-			-@post.photos.each do |photo|
-				.image{id: "photo_#{photo.id}"}
-					= image_tag photo.photo.url(:thumb)
-					= link_to 'x', destroy_photo_path(photo.id), method: :delete, remote: true, data: { confirm: 'Usunąć zdjęcie?' },class: 'destroy_photo'
-					.clear
-			.clear
+	= f.label :photos
+	= f.attachinary_file_field :photos
+
 	.submit
 		= f.submit
 		

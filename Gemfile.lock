@@ -37,16 +37,19 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    attachinary (1.3.1)
+      cloudinary (~> 1.1.0)
+      rails (>= 3.2)
+    aws_cf_signer (0.1.3)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bonsai-elasticsearch-rails (0.0.4)
     builder (3.2.2)
     byebug (8.2.2)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
-    cocaine (0.5.8)
-      climate_control (>= 0.0.3, < 1.0)
+    cloudinary (1.1.4)
+      aws_cf_signer
+      rest-client
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -56,8 +59,8 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
     debug_inspector (0.0.2)
-    dropzonejs-rails (0.7.3)
-      rails (> 3.1)
+    domain_name (0.5.20160310)
+      unf (>= 0.0.5, < 1.0.0)
     elasticsearch (1.0.15)
       elasticsearch-api (= 1.0.15)
       elasticsearch-transport (= 1.0.15)
@@ -80,6 +83,8 @@ GEM
     haml (4.0.7)
       tilt
     hashie (3.4.3)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -96,19 +101,13 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.99.1)
-    mimemagic (0.3.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
     multipart-post (2.0.0)
+    netrc (0.11.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    paperclip (4.3.6)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      cocaine (~> 0.5.5)
-      mime-types
-      mimemagic (= 0.3.0)
     pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -145,6 +144,10 @@ GEM
     rake (11.1.1)
     rdoc (4.2.2)
       json (~> 1.4)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     sass (3.4.21)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -180,6 +183,9 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -191,18 +197,18 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  attachinary
   bcrypt (~> 3.1.7)
   bonsai-elasticsearch-rails
   byebug
+  cloudinary
   coffee-rails (~> 4.1.0)
-  dropzonejs-rails
   elasticsearch-model
   elasticsearch-rails
   haml (~> 4.0, >= 4.0.7)
   jbuilder (~> 2.0)
   jquery-rails
   lightbox2-rails
-  paperclip (~> 4.3, >= 4.3.6)
   pg
   rails (= 4.2.6)
   rails_12factor

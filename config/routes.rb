@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 
   resources :posts   
   get ':action' => 'public#action'
-
+  mount Attachinary::Engine => "/attachinary"
   root 'public#index'
 end

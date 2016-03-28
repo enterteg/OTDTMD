@@ -3,6 +3,23 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
+
+# -------------- my gems
+gem 'cloudinary'
+gem 'attachinary'
+gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'pg'
+gem 'tinymce-rails'
+gem 'truncate_html', '~> 0.9.3'
+gem 'lightbox2-rails'
+gem 'will_paginate', '~> 3.0.6'
+gem 'searchkick'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'bonsai-elasticsearch-rails'
+
+#------------------
+
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -27,20 +44,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# -------------- my gems
-gem 'haml', '~> 4.0', '>= 4.0.7'
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
-gem 'pg'
-gem 'tinymce-rails'
-gem 'dropzonejs-rails' 
-gem 'truncate_html', '~> 0.9.3'
-gem 'lightbox2-rails'
-gem 'will_paginate', '~> 3.0.6'
-gem 'searchkick'
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
-gem 'bonsai-elasticsearch-rails'
-#------------------
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -9,11 +9,11 @@
 					#map_photo
 						= image_tag 'map.jpg'
 						.map_pin#location_pin{style: "left: #{@post.locX}%; top: #{@post.locY}%"}
-			-if @post.photos.any?	
+			-if @post.photos	
 				.photos
 					-@post.photos.each do |photo|
-						= link_to (photo.photo.url(:large)), data: {lightbox: 'example-set'} do
-							= image_tag photo.photo.url(:medium)
+						= link_to (cloudinary_url photo.path), data: {lightbox: 'example-set'} do
+							= cl_image_tag photo.path, size: '170x150', crop: :fill
 					.clear
 
 			= link_to :back do
