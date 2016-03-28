@@ -2,7 +2,7 @@
 	=form_tag login_path, id: 'login_form' do
 		.input
 			= label_tag :login
-			= text_field_tag :login
+			= text_field_tag :login, '', autofocus: true
 		.input
 			= label_tag :password
 			= password_field_tag :password

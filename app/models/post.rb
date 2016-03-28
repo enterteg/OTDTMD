@@ -19,6 +19,9 @@ class Post < ActiveRecord::Base
 	validates :title, length: { minimum: 3}
 
 
+	def self.paginate_it (params)
+		paginate(page: params, per_page: 4).includes(:photos)
+	end
 
 	def validate_travel_pin
 		 if (self.category_id == 1 && (self.locX == nil || self.locY == nil))
