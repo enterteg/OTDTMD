@@ -17,8 +17,8 @@ gem 'searchkick'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'bonsai-elasticsearch-rails'
-
-#------------------
+gem 'responders', '~> 2.0'
+#-----------------
 
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
