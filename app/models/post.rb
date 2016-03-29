@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
     	attribute :title, :desc
   	end
 
+
+
 	validate :validate_travel_pin
 	belongs_to :category
 	has_attachments :photos, maximum: 30
@@ -31,6 +33,9 @@ class Post < ActiveRecord::Base
 		 	errors.add(:location, "is not set")  
 		 	false
 		 end
+	end
+	def self.search_suggestions(term)
+	  where('LOWER(title) LIKE :term', term: "%#{term.downcase}%")
 	end
 
 end

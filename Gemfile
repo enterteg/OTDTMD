@@ -15,6 +15,7 @@ gem 'lightbox2-rails'
 gem 'will_paginate', '~> 3.0.6'
 gem "algoliasearch-rails"
 gem 'responders', '~> 2.0'
+gem 'jquery-ui-rails'
 #-----------------
 
 # Use sqlite3 as the database for Active Record

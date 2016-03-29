@@ -15,6 +15,8 @@
 
 //= require algolia/algoliasearch.min
 
+//= require jquery-ui/autocomplete
+
 //= require jquery.ui.widget
 //= require jquery.iframe-transport
 //= require jquery.fileupload

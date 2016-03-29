@@ -18,6 +18,21 @@ hr
 	border: none
 	border-top: 1px solid rgba(100,0,200,0.1)
 	margin-bottom: 60px
+#ui-id-1
+	background: white
+	outline: 1px solid rgba(250,50,150,0.4)
+	display: inline-block
+	list-style-type: none
+	margin: 0px
+	padding: 0px
+	li
+		padding: 8px
+		color: black
+		border-bottom: 1px solid rgba(250,50,150,0.6)
+		&:hover
+			background: rgba(250,50,150,0.05)
+			cursor: pointer
+
 .container_mini
 	max-width: 500px
 	margin: 0 auto
@@ -42,6 +57,7 @@ hr
 	float: left
 	height: $top_menu_height
 	width: 100%
+
 	nav
 		#logo_image
 			background: url( image_path('logo.png')) center no-repeat

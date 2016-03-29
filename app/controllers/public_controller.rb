@@ -37,4 +37,8 @@ class PublicController < ApplicationController
       redirect_to action: :index
     end
   end
+
+  def search_suggestions
+    render json: Post.search_suggestions(params[:term]).limit(3).pluck(:title)
+  end
 end
