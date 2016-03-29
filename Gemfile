@@ -13,10 +13,7 @@ gem 'tinymce-rails'
 gem 'truncate_html', '~> 0.9.3'
 gem 'lightbox2-rails'
 gem 'will_paginate', '~> 3.0.6'
-gem 'searchkick'
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
-gem 'bonsai-elasticsearch-rails'
+gem "algoliasearch-rails"
 gem 'responders', '~> 2.0'
 #-----------------
 

@@ -1,6 +1,10 @@
 class Post < ActiveRecord::Base
-	searchkick
+	include AlgoliaSearch
 	
+	algoliasearch do
+    	attribute :title, :desc
+  	end
+
 	validate :validate_travel_pin
 	belongs_to :category
 	has_attachments :photos, maximum: 30

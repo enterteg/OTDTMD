@@ -34,7 +34,7 @@
 					- else
 						.search
 							= form_tag search_path, method: :get do
-								= text_field_tag :search
+								= text_field_tag :search,'', id: 'search'
 								= submit_tag 'Search'
 					/ - else
 					/ 	.social
@@ -56,3 +56,5 @@
 		#notice
 			= flash[:notice]
 	= yield
+
+			

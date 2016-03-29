@@ -31,7 +31,8 @@ class PublicController < ApplicationController
   def search
     @controller = 'search'
     if params[:search].present? 
-      @posts = Post.paginate_it(params[:page]).search(params[:search])
+      @posts = Post.includes(:photo_files).search(params[:search],  hitsPerPage: 5) 
+      p
     else
       redirect_to action: :index
     end

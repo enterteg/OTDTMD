@@ -13,7 +13,7 @@
 				.photos
 					-@post.photos.each do |photo|
 						= link_to (cloudinary_url photo.path), data: {lightbox: 'example-set'} do
-							= cl_image_tag photo.path, size: '300x170', crop: :fill
+							= cl_image_tag photo.path, size: '240x130', crop: :fill
 					.clear
 
 			= link_to :back do
