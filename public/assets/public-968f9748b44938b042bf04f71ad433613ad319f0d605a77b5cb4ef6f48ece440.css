@@ -1,0 +1,300 @@
+/* line 5, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+/* line 11, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+body#tinymce {
+  padding: 10px;
+  font-size: 20px;
+  font-family: times-new-roman;
+  padding-top: 0px;
+}
+
+/* line 17, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+hr {
+  border: none;
+  border-top: 1px solid rgba(100, 0, 200, 0.1);
+  margin-bottom: 60px;
+}
+
+/* line 21, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+.ui-autocomplete {
+  background: white;
+  outline: 1px solid rgba(250, 50, 150, 0.4);
+  display: inline-block;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+/* line 28, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+.ui-autocomplete li {
+  padding: 8px;
+  color: black;
+  border-bottom: 1px solid rgba(250, 50, 150, 0.6);
+}
+/* line 32, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+.ui-autocomplete li:hover {
+  background: rgba(250, 50, 150, 0.05);
+  cursor: pointer;
+}
+
+/* line 36, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+.container_mini {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0px 10px;
+  z-index: -10;
+}
+
+/* line 41, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+.container {
+  z-index: -10;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0px 10px;
+}
+
+/* line 46, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#notice {
+  position: fixed;
+  z-index: 999;
+  top: 200px;
+  line-height: 10vh;
+  font-size: 3vh;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(165, 63, 132, 0.78);
+  color: white;
+}
+
+/* line 56, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu {
+  float: left;
+  height: 80px;
+  width: 100%;
+}
+/* line 62, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu nav #logo_image {
+  background: url("/assets/logo-1a04112e6d10064bc77fdf902a8743346645f6bafe218177aa866b5d62e20102.png") center no-repeat;
+  width: 19px;
+  height: 80px;
+  float: left;
+  margin: 0px 15px;
+}
+/* line 68, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu nav ul {
+  color: rgba(100, 20, 150, 0.5);
+  padding: 0px;
+  margin: 0px;
+  line-height: 80px;
+  float: left;
+  list-style-type: none;
+}
+/* line 75, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu nav ul a {
+  text-decoration: none;
+}
+/* line 77, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu nav ul a li {
+  color: black;
+  font-size: 1.3rem;
+  display: inline;
+  margin: 0px 2px;
+  padding: 8px 5px;
+  border-top: 0px solid white;
+  -moz-transition: 0.5s border;
+  -o-transition: 0.5s border;
+  -ms-transition: 0.5s border;
+  -webkit-transition: 0.5s border;
+  transition: 0.5s border;
+}
+/* line 85, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu nav ul a li:hover {
+  position: relative;
+  cursor: pointer;
+  border-top: 30px solid rgba(250, 0, 100, 0.45);
+}
+/* line 89, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .admin {
+  float: right;
+  line-height: 80px;
+}
+/* line 92, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .admin .logout {
+  background: none;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  outline: none;
+  font-weight: 100;
+}
+/* line 98, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .admin .logout:hover {
+  color: black;
+  border-bottom: 2px solid rgba(200, 50, 200, 0.5);
+}
+/* line 102, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .search {
+  float: right;
+  margin-left: 25%;
+  position: relative;
+  top: 25px;
+}
+/* line 107, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .search input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+/* line 110, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .search input[type='submit'] {
+  position: relative;
+  top: -2px;
+  opacity: 0.7;
+  border: none;
+  background: rgba(250, 0, 100, 0.65);
+  color: white;
+  padding: 9px;
+  cursor: pointer;
+}
+/* line 119, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .search input[type='submit']:hover {
+  background: rgba(250, 0, 100, 0.45);
+}
+/* line 122, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .search input[type='text'] {
+  font-size: 1.1rem;
+  font-family: sans-serif;
+  opacity: 0.1;
+  padding: 5px;
+  outline: none;
+  border: 0px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  background: white;
+}
+/* line 132, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .search input[type='text']:focus {
+  opacity: 1;
+}
+/* line 134, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .search input[type='text']:focus + [type='submit'] {
+  opacity: 1;
+}
+/* line 137, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .social {
+  float: right;
+  height: 80px;
+}
+/* line 140, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .social a {
+  text-decoraion: none;
+  color: white;
+}
+/* line 143, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .social img {
+  display: inline-block;
+  margin-left: 5px;
+  width: 35px;
+  height: 35px;
+  opacity: 0.3;
+  position: relative;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 152, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#top_menu .social img:hover {
+  opacity: 0.7;
+}
+
+/* line 157, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#logo_banner {
+  clear: both;
+  width: 100%;
+  background: url("/assets/logo_banner3-f30c37df9e98896de37838ac04371dc0c580ab4e6962641a386544ca55745c80.jpg") center no-repeat;
+  background-size: cover;
+  height: 370px;
+  color: white;
+  position: relative;
+}
+/* line 165, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#logo_banner .banner_text {
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -45%);
+  -o-transform: translate(-50%, -45%);
+  -ms-transform: translate(-50%, -45%);
+  -webkit-transform: translate(-50%, -45%);
+  transform: translate(-50%, -45%);
+  position: absolute;
+  line-height: 1.5;
+}
+/* line 173, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#logo_banner .banner_text .smaller {
+  font-size: 3.2rem;
+}
+/* line 175, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#logo_banner .banner_text .smaller_more {
+  font-size: 2.8rem;
+}
+/* line 177, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#logo_banner .banner_text .bigger {
+  letter-spacing: 5px;
+  font-size: 5rem;
+}
+
+/* line 182, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+#map {
+  max-width: 1100px;
+  margin: 50px auto 0px;
+}
+
+/* line 185, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+.header {
+  font-size: 3rem;
+  text-align: center;
+  padding: 30px 10px;
+}
+/* line 189, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+.header.travels {
+  margin-top: 80px;
+}
+/* line 191, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+.header.heart {
+  margin-top: -25px;
+}
+/* line 193, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+.header.heart img {
+  position: relative;
+  top: 22px;
+  left: 10px;
+}
+
+/* line 197, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+.button {
+  text-decoration: none;
+  margin-right: 5px;
+  padding: 8px 18px;
+  color: #960064;
+  font-size: 1.1rem;
+  cursor: pointer;
+  -moz-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  outline: 1px solid rgba(250, 0, 100, 0.35);
+}
+/* line 206, /home/enterteg/work/Blog/app/assets/stylesheets/public.sass */
+.button:hover {
+  color: white;
+  background: rgba(250, 0, 100, 0.65);
+}
