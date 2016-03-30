@@ -2,3 +2,7 @@ $ ->
 	$('#notice').hide().fadeIn().delay(1500).fadeOut()
 	$('#search').autocomplete
 		source: '/search_suggestions'
+		
+$(document).on 'page:load', ->
+	$('#search').autocomplete
+		source: '/search_suggestions'

@@ -1,10 +1,11 @@
 class Post < ActiveRecord::Base
-	include AlgoliaSearch
-	
-	algoliasearch do
-    	attribute :title, :desc
-  	end
 
+	include PgSearch
+  	pg_search_scope :search, 
+		  					against: [[:title, 'A'],[:desc, 'B']], 
+			  				:using => {
+			                  :tsearch => {:prefix => true}
+			                }
 
 
 	validate :validate_travel_pin

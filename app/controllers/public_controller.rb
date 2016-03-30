@@ -31,7 +31,7 @@ class PublicController < ApplicationController
   def search
     @controller = 'search'
     if params[:search].present? 
-      @posts = Post.includes(:photo_files).search(params[:search],  hitsPerPage: 5) 
+      @posts = Post.paginate_it(params[:page]).search(params[:search]) 
       p
     else
       redirect_to action: :index
@@ -39,6 +39,6 @@ class PublicController < ApplicationController
   end
 
   def search_suggestions
-    render json: Post.search_suggestions(params[:term]).limit(3).pluck(:title)
+    render json: Post.search(params[:term]).limit(3).pluck(:title)
   end
 end
