@@ -25,7 +25,8 @@ class PublicController < ApplicationController
   end
 
   def about
-  	@post = Post.includes(:photo_files).find(1)
+  	@post = Post.includes(:photo_files).find_by(id: 1)
+    render :nothing unless @post
   end
   
   def search
